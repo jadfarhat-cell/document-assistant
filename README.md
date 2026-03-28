@@ -25,7 +25,7 @@ flowchart TD
     E --> N[(📊 Document Index\nMetadata Store)]
 ```
 
-## ✨ Features
+##  Features
 
 - Multi-format support: PDF, DOCX, TXT, CSV, Markdown
 - Contextual Q&A with source highlighting
@@ -48,7 +48,7 @@ flowchart TD
 | UI | Streamlit / React |
 | API | FastAPI |
 
-## 🚀 How to Run
+##  How to Run
 
 ```bash
 # 1. Clone and install
