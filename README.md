@@ -4,26 +4,7 @@ An intelligent document Q&A assistant powered by Retrieval-Augmented Generation 
 
 ## Architecture
 
-```mermaid
-flowchart TD
- A[ Document Upload\nPDF / DOCX / TXT / CSV] --> B[Document Loader\nPyMuPDF / Unstructured]
- B --> C[Text Chunker\nRecursive Splitter\n512 tokens / 50 overlap]
- C --> D[Embedding Model\nOpenAI Ada-002 / HuggingFace]
- D --> E[( Vector Store\nChromaDB / FAISS)]
-
- F[ User Query] --> G[Query Embedder]
- G --> H[Similarity Search\nTop-K Retrieval]
- E --> H
- H --> I[Retrieved Chunks\nwith Metadata]
- 
- I --> J[Context Builder\nPrompt Template]
- F --> J
- J --> K[LLM\nGPT-4 / Claude / Llama 3]
- K --> L[ Answer\nwith Source Citations]
- L --> M[Chat UI\nStreamlit / React]
- 
- E --> N[( Document Index\nMetadata Store)]
-```
+![Architecture Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRECiBBWyBEb2N1bWVudCBVcGxvYWRcblBERiAvIERPQ1ggLyBUWFQgLyBDU1ZdIC0tPiBCW0RvY3VtZW50IExvYWRlclxuUHlNdVBERiAvIFVuc3RydWN0dXJlZF0KIEIgLS0-IENbVGV4dCBDaHVua2VyXG5SZWN1cnNpdmUgU3BsaXR0ZXJcbjUxMiB0b2tlbnMgLyA1MCBvdmVybGFwXQogQyAtLT4gRFtFbWJlZGRpbmcgTW9kZWxcbk9wZW5BSSBBZGEtMDAyIC8gSHVnZ2luZ0ZhY2VdCiBEIC0tPiBFWyggVmVjdG9yIFN0b3JlXG5DaHJvbWFEQiAvIEZBSVNTKV0KCiBGWyBVc2VyIFF1ZXJ5XSAtLT4gR1tRdWVyeSBFbWJlZGRlcl0KIEcgLS0-IEhbU2ltaWxhcml0eSBTZWFyY2hcblRvcC1LIFJldHJpZXZhbF0KIEUgLS0-IEgKIEggLS0-IElbUmV0cmlldmVkIENodW5rc1xud2l0aCBNZXRhZGF0YV0KIAogSSAtLT4gSltDb250ZXh0IEJ1aWxkZXJcblByb21wdCBUZW1wbGF0ZV0KIEYgLS0-IEoKIEogLS0-IEtbTExNXG5HUFQtNCAvIENsYXVkZSAvIExsYW1hIDNdCiBLIC0tPiBMWyBBbnN3ZXJcbndpdGggU291cmNlIENpdGF0aW9uc10KIEwgLS0-IE1bQ2hhdCBVSVxuU3RyZWFtbGl0IC8gUmVhY3RdCiAKIEUgLS0-IE5bKCBEb2N1bWVudCBJbmRleFxuTWV0YWRhdGEgU3RvcmUpXQ)
 
 ## Features
 
